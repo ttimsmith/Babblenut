@@ -1,0 +1,17 @@
+
+/babblenut.sublime-project
+/babblenut.sublime-workspace
+
+.htaccess
+wp-config.php
+/uploads/
+/blogs.dir/
+/upgrade/
+/backup-db/
+/advanced-cache.php
+/wp-cache-config.php
+sitemap.xml
+*.log
+/cache/
+/backups/
+sitemap.xml.gz
