@@ -2,6 +2,8 @@
 /babblenut.sublime-project
 /babblenut.sublime-workspace
 
+.sass-cache/
+
 .htaccess
 wp-config.php
 /uploads/
