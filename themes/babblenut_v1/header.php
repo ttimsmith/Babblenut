@@ -18,7 +18,7 @@
 
   Made with love in beautiful Saint Paul, Minnesota.
 
-  © 2013 Anythin’ Goes LLC and Timothy B. Smith.
+  © 2013 Paul Armstrong and Timothy B. Smith.
 
   -->
 
@@ -28,10 +28,11 @@
 
   
   <!-- My styles -->
-  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/global.css"/>
-  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/responsify.css"/>
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/global.css"/>
 
   <!-- Typekit Code -->
+  <script type="text/javascript" src="//use.typekit.net/lym5isq.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 
   <!--WP Generated Header -->
@@ -40,3 +41,13 @@
   
 </head>
 <body <?php body_class($class); ?>>
+
+<div class="contain">
+
+  <header class="site__header" role="banner">
+    <nav class="site__nav" role="navigation">
+      <li><a href="#">Episodes</a></li>
+      <li><a href="#">Sponsorship</a></li>
+      <li><a href="#">Contact</a></li>
+    </nav>
+  </header><!-- .site__header -->

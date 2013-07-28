@@ -1,11 +1,34 @@
 <?php get_header(); ?>
 
+	<main class="site__content" role="main">
+		
+		<?php get_sidebar(); ?>
 
+		<section class="content__main-column">
+			<div class="description">
+				<h1>Babblenut</h1>
+				<p>A weekly news update focused on the tech, design and development industries. It's the news you need to know.</p>
+			</div>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<div class="posts">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					
+					<article class="entry">
+						<h2><a href="<?php the_permalink(); ?>" title="Link to <?php the_title(); ?>">#<?php the_field('episode_number');?>: <?php the_title(); ?></a></h2>
+						<p class="pubdate"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F jS, Y');?></time> &middot; <?php the_field('episode_length'); ?> minutes</p>
+						<?php the_excerpt(); ?>
+					</article>
 
+				<?php endwhile; endif; ?>
 
-	<?php endwhile; endif; ?>
+			</div><!-- .posts -->
+
+			<div class="page__navigation">
+				<?php # wp_pagenavi(); ?>
+			</div>
+
+		</section><!-- .content__main-column -->
+	</main><!-- .site__content -->
 
 
 <?php get_footer(); ?>

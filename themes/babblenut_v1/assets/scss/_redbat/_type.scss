@@ -29,9 +29,10 @@ BASE TYPE
 ------------------------------------------- */
 
 body {
+	@extend %sans;
 	font-size: 110%;
 	line-height: 140%;
-	// color: $bodyColor;
+	color: $bodyColor;
 }
 
 
@@ -40,9 +41,9 @@ body {
 FONTS
 ------------------------------------------- */
 
-// %sans {
-// 	font-family: ;
-// }
+%sans {
+	font-family: "jaf-facitweb",sans-serif;
+}
 
 // %serif {
 // 	font-family: ;
@@ -112,7 +113,7 @@ ICON FONT
 
 [data-icon]:before {
   content: attr(data-icon);
-  @include iconfont;
+  @extend %iconfont;
   speak: none;
   vertical-align: top;
 }

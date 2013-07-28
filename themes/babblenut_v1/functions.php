@@ -52,6 +52,24 @@ function create_post_type() {
   );
 }
 
+// Adding Markdown support to episodes
+add_action( 'init', 'ts_add_markdown_support' );
+function ts_add_markdown_support(){
+    add_post_type_support( 'episodes', 'markdown-osi' );
+}
+
+// Adding 'Episodes' Post Type to Main Loop
+
+add_filter( 'pre_get_posts', 'my_get_posts' );
+
+function my_get_posts( $query ) {
+
+    if ( is_home() && $query->is_main_query() )
+        $query->set( 'post_type', array( 'episodes' ) );
+
+    return $query;
+}
+
 // Removing Unnecessary Stuff from Admin Menu
 
 function remove_menus () {
@@ -80,3 +98,77 @@ function mytheme_admin_bar_render() {
 }
 // and we hook our function via
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
+
+
+/*
+
+Episode Meta Fields 
+-----------------------------------------------------------
+
+*/
+
+add_action('acf/register_fields', 'my_register_fields');
+
+// Options Page 
+
+include_once( 'add-ons/acf-options-page/acf-options-page.php' );
+
+
+if(function_exists("register_field_group"))
+{
+    register_field_group(array (
+        'id' => 'acf_episode-stuff',
+        'title' => 'Episode Stuff',
+        'fields' => array (
+            array (
+                'key' => 'field_51e9f7a0905b9',
+                'label' => 'Episode Number',
+                'name' => 'episode_number',
+                'type' => 'number',
+                'default_value' => '',
+                'min' => 1,
+                'max' => '',
+                'step' => '',
+            ),
+            array (
+                'key' => 'field_51ea2c8f059b4',
+                'label' => 'Episode Length',
+                'name' => 'episode_length',
+                'type' => 'number',
+                'required' => 1,
+                'default_value' => '',
+                'min' => 1,
+                'max' => 60,
+                'step' => '',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'episodes',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'default',
+            'hide_on_screen' => array (
+                0 => 'custom_fields',
+                1 => 'discussion',
+                2 => 'comments',
+                3 => 'revisions',
+                4 => 'slug',
+                5 => 'author',
+                6 => 'format',
+                7 => 'featured_image',
+                8 => 'tags',
+                9 => 'send-trackbacks',
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}

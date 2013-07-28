@@ -5,6 +5,9 @@ GLOBAL STYLESHEET
 
 Created and Authored by Tim Smith.
 
+Inspired by Jeff Schram, and Harry Roberts with some
+modifications.
+
 Table of Contents
 
 - Import Compass
@@ -113,7 +116,7 @@ Setting up components & reusable objects.
 
 @import "_redbat/buttons";
 
-@import "_redbat/pagination";
+@import "_redbat/pagenavi";
 
 
 /*
@@ -134,10 +137,10 @@ Layout Styles.
 
 ------------------------------------------- */
 
-@import "_redbat/header";
+@import "_layout/header";
 
-@import "_redbat/maincontent";
+@import "_layout/maincontent";
 
-@import "_redbat/pages";
+@import "_layout/pages";
 
-@import "_redbat/footer";
+@import "_layout/footer";
