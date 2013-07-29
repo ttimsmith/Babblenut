@@ -17,6 +17,7 @@ wp_register_script( 'global-stuff', get_template_directory_uri() . '/assets/js/s
 wp_enqueue_script( 'global-stuff', 'true', 'true', 'true', 'true' );
 
 
+
 // Episodes Post Type
 
 add_action( 'init', 'create_post_type');
@@ -131,6 +132,18 @@ function mytheme_admin_bar_render() {
     $wp_admin_bar->remove_menu('new-media', 'new-content');
     $wp_admin_bar->remove_menu('new-user', 'new-content');
     $wp_admin_bar->remove_menu('new-post', 'new-content');
+    $wp_admin_bar->add_menu( array(
+        'parent' => false,
+        'id' => 'live-stream-admin-menu',
+        'title' => __('Live Stream'),
+        'href' => admin_url( 'admin.php?page=acf-options-live-stream-options')
+    ) );
+    $wp_admin_bar->add_menu( array(
+        'parent' => 'live-stream-admin-menu',
+        'id' => 'live_stream_page',
+        'title' => __('Live Page'),
+        'href' => ('/live')
+    ) );
 }
 // and we hook our function via
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
@@ -148,3 +161,7 @@ add_action('acf/register_fields', 'my_register_fields');
 // Options Page 
 
 include_once( 'add-ons/acf-options-page/acf-options-page.php' );
+
+
+// Registering Live Stream Options Page
+register_options_page('Live Stream Options');
