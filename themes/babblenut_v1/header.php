@@ -44,12 +44,20 @@
 
 <div class="contain">
 
+  <?php if (get_field('live_show', 'options')) : ?>
+    <div class="live-banner">
+        <div class="recording animated pulse"></div>
+        <p>ON AIR: Babblenut #<?php the_field('live_episode_number', 'options'); ?> with Paul Armstrong &amp; Tim Smith - <a href="/live">Listen</a></p>
+    </div>
+
+  <?php endif; ?>
+
   <header class="site__header" role="banner">
     <nav class="site__nav" role="navigation">
       <ul>
         <li><a href="/">Episodes</a></li>
-        <li><a href="#">Sponsorship</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/sponsorship">Sponsorship</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   </header><!-- .site__header -->
