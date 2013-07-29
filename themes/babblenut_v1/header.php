@@ -58,6 +58,7 @@
         <li><a href="/">Episodes</a></li>
         <li><a href="/sponsorship">Sponsorship</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/live">Live</a></li>
       </ul>
     </nav>
   </header><!-- .site__header -->
