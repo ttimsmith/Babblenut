@@ -4,3 +4,174 @@ FORMS
 -------------------------------------------
 
 */
+
+
+.gform_wrapper {
+  border-top: 1px solid $borderColor;
+  padding: 5% 0 0;
+  margin: 5% 0 0;
+  list-style-type: none;
+  @media screen and (max-width: 700px ) {
+    margin: 5% 0 0;
+  }
+}
+
+.gform_body {
+  padding: 0 1px;
+  label {
+    line-height: 1;
+  }
+}
+
+#gform_fields_1, #gform_fields_2, #gform_fields_3, #gform_fields_4 {
+  list-style-type: none;
+  margin: 0;
+}
+
+.gfield {
+  margin: 0 0 03.125%;
+}
+
+.gfield_label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 02.34375%;
+}
+
+.ginput_left {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+  padding-right: 5px;
+  label {
+    color: lighten($bodyColor, 45%);
+    font-weight: bold;
+    font-size: .75em;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+  }
+}
+
+.ginput_right {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+  padding-left: 5px;
+  label {
+    color: lighten($bodyColor, 45%);
+    font-weight: bold;
+    font-size: .75em;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+  }
+}
+
+.medium {
+  width: 75%;
+}
+
+.ginput_container {
+  input {
+    background: lighten($borderColor, 1.5%);
+    color: $bodyColor;
+    @include border-radius(2px);
+    padding: 10px;
+    width: 100%;
+    @include transition(background .2s ease-in-out);
+    &:focus {
+      background: lighten($borderColor, 3%);
+    }
+  }
+  textarea{
+    background: lighten($borderColor, 1.5%);
+    color: $bodyColor;
+    @include border-radius(2px);
+    padding: 10px;
+    width: 100%;
+    height: 150px;
+    resize: none;
+    @include transition(background .2s ease-in-out);
+    &:focus {
+      background: lighten($borderColor, 3%);
+    }
+  }
+}
+
+.gfield_date_month, .gfield_date_day, .gfield_date_year {
+  display: inline-block;
+  width: 20%;
+  label {
+    color: lighten($bodyColor, 45%);
+    font-weight: bold;
+    font-size: .75em;
+  }
+}
+
+.gfield_radio, .gfield_checkbox {
+  list-style-type: none;
+  margin: 0;
+  input {
+    width: auto;
+    margin: 0 10px 0 0;
+  }
+  label {
+    font-size: .9em;
+  }
+}
+
+.gfield_date_day {
+  margin: 0 2.5%;
+}
+
+.gfield_description {
+	color: lighten($bodyColor, 45%);
+  font-size: .8em;
+  margin: 00.78125% 0 0;
+}
+
+.gfield_required, .validation_error, .validation_message {
+  color: $alertColor;
+}
+
+#gforms_confirmation_message {
+  border-top: 1px solid $borderColor;
+  padding: 5% 0 0;
+  margin: 5% 0 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 160%;
+}
+
+.validation_error {
+  margin: 0 0 02.34375%;
+  font-weight: bold;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: lighten($bodyColor, 60%);
+}
+
+::-webkit-input-placeholder {
+   color: lighten($bodyColor, 50%);
+   @include transition(.2s ease-in-out);
+}
+
+input:focus:-moz-placeholder {
+	color: lighten($bodyColor, 60%);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: lighten($bodyColor, 50%);
+   @include transition(.2s ease-in-out);  
+}
+
+input:focus::-moz-placeholder {
+	color: lighten($bodyColor, 60%);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: lighten($bodyColor, 50%);
+   @include transition(.2s ease-in-out);  
+}
