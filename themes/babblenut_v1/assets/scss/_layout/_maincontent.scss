@@ -1,0 +1,87 @@
+/*
+
+MAIN CONTENT
+---------------------------------------------------------
+
+*/
+
+.site__content {
+	background: white;
+	padding: $spacing-m $spacing-s;
+	@extend %clearfix;
+
+}
+
+.content__main-column {
+	float: left;
+	width: percentage(620/900);
+}
+
+.description {
+	border-bottom: 10px solid $borderColor;
+	margin: 0 0 $spacing-m;
+	padding: 0 0 $spacing-xs;
+	h1 {
+		font-weight: 800;
+		margin: 0 0 $spacing-xxs;
+		@extend %heading-size-xl;
+	}
+	p {
+		color: lighten($bodyColor, 45%);
+		font-size: $text-size-l;
+		line-height: 140%;
+		margin: 0;
+	}
+}
+
+.entry {
+	border-bottom: 1px solid $borderColor;
+	margin: 0 0 $spacing-s;
+	padding: 0 0 $spacing-s;
+	&:last-child {
+		border-bottom: none;
+		padding: 0;
+	}
+}
+
+.podPress_content {
+	@extend %clearfix;
+	border-bottom: 1px solid $borderColor !important;
+	margin: 0 0 $spacing-xs !important;
+	padding: 0 0 $spacing-xxs !important;
+}
+
+.podpress_playerspace {
+	margin: 0 !important;
+}
+
+.podPress_downloadlinks {
+	margin-bottom: 0 !important;
+	span, a {
+		font-size: $text-size-s !important;
+	}
+}
+
+.podpress_mediafile_title {
+  display: none;
+}
+
+.entry__sponsor {
+	background: lighten($borderColor, 3%);
+	border-radius: 3px;
+	font-size: $text-size-xs;
+	margin: $spacing-xs 0;
+	padding: $spacing-xxs;
+	p {
+		margin-bottom: 7px;
+	}
+	li {
+		margin: 0 0 2px;
+		&:last-child {
+			margin: 0;
+		}
+	}
+	a {
+		font-weight: bold;
+	}
+}

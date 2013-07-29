@@ -114,6 +114,8 @@ Setting up components & reusable objects.
 
 @import "_redbat/objects";
 
+@import "_redbat/mediaelement";
+
 @import "_redbat/buttons";
 
 @import "_redbat/pagenavi";
@@ -139,8 +141,22 @@ Layout Styles.
 
 @import "_layout/header";
 
+@import "_layout/sidebar";
+
 @import "_layout/maincontent";
 
 @import "_layout/pages";
 
 @import "_layout/footer";
+
+
+/*
+
+SHAME
+-------------------------------------------
+@shame
+------------------------------------------- */
+
+body {
+	background: $darkColor;
+}

@@ -4,3 +4,12 @@ OBJECTS
 -------------------------------------------
 
 */
+
+.contain {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.inactive {
+	color: lighten($bodyColor, 45%);
+}

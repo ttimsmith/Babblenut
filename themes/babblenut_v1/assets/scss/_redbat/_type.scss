@@ -61,6 +61,58 @@ HEADINGS
 TEXT
 ------------------------------------------- */
 
+// TYPE SIZE VARIABLES
+
+$text-size-xs: .8em;
+$text-size-s: .9em;
+$text-size-m: 1em;
+$text-size-l: 1.5em;
+$text-size-xl: 2em;
+
+%heading-size-s { font-size: .95em;}
+%heading-size-m { font-size: 1.25em;}
+%heading-size-l { font-size: 1.5em;}
+%heading-size-xl { font-size: 2em;}
+
+
+// MAIN COLUMN TEXT STYLES
+
+h2,
+h3,
+h4 {
+	font-weight: bold;
+}
+
+.content__main-column {
+	h2 {
+		margin: 0 0 $spacing-xxs;
+		@extend %heading-size-m;
+	}
+	h3 {
+		margin: 0 0 $spacing-xxs;
+	}
+	h4 {
+		line-height: 170%;
+		margin: $spacing-xs + 5px 0 1px;
+		@extend %heading-size-s;
+	}
+	p {
+		font-size: $text-size-s;
+		line-height: 160%;
+		margin: 0 0 $spacing-xs;
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+p.pubdate {
+	color: lighten($darkColor, 45%);
+	font-size: $text-size-xs;
+	margin: 0 0 10px;
+}
+
+
 
 /*
 
@@ -88,13 +140,12 @@ HR
 ------------------------------------------- */
 
 hr {
-	// border: solid $borderColor;
-	border-width: 5px 0 0;
+	border: solid $borderColor;
+	border-width: 1px 0 0;
 	clear: both;
-	// margin: $spacing-m auto;
+	margin: $spacing-xs auto;
 	height: 0;
 	width: auto;
-	max-width: 350px;
 	display: block;
 	padding: 0;
 }
@@ -105,15 +156,28 @@ hr {
 LINKS
 ------------------------------------------- */
 
+a {
+	color: $linkColor;
+	@include transition(.2s ease-in-out);
+	&:hover {
+		color: $jazzColor;
+	}
+}
+
 
 /*
 
 ICON FONT
 ------------------------------------------- */
 
+@include embed-font("Entypo", "../fonts/entypo/entypo");
+%icon-font {
+	font-family: "Entypo";
+}
+
 [data-icon]:before {
   content: attr(data-icon);
-  @extend %iconfont;
+  @extend %icon-font;
   speak: none;
   vertical-align: top;
 }

@@ -1,0 +1,25 @@
+/*
+
+HEADER
+---------------------------------------------------------
+
+*/
+
+.site__header {
+	background: darken($darkColor, 5%);
+	padding: $spacing-xs $spacing-s;
+}
+
+.site__nav {
+	li {
+		display: inline-block;
+		font-size: $text-size-s;
+		margin: 0 $spacing-xxs 0 0;
+		a {
+			color: lighten($darkColor, 30%);
+			&:hover {
+				color: lighten($darkColor, 50%);
+			}
+		}
+	}
+}

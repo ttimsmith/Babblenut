@@ -1,0 +1,21 @@
+.site__footer {
+	background: $jazzColor;
+	color: darken($jazzColor, 25%);
+	font-size: $text-size-xs;
+	padding: $spacing-xs $spacing-s;
+	a {
+		color: darken($jazzColor, 25%);
+		border-bottom: 1px solid darken($jazzColor, 15%);
+		&:hover {
+			color: darken($jazzColor, 20%);
+			border-bottom: 1px solid darken($jazzColor, 10%);
+		}
+	}
+	small {
+		display: block;
+		margin: 0 0 5px;
+		&:last-child {
+			margin: 0;
+		}
+	}
+}

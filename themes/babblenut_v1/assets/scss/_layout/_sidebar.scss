@@ -1,0 +1,57 @@
+/*
+
+SIDEBAR
+---------------------------------------------------------
+
+*/
+
+.content__sidebar {
+	background: $borderColor;
+	float: left;
+	margin: 0 $spacing-m 0 0;
+	width: percentage(240/900);
+}
+
+.sidebar__info {
+	padding: $spacing-xxs;
+	h4 {
+		font-size: $text-size-s;
+		font-weight: bold;
+		margin: 0 0 $spacing-xxs;
+	}
+	h5 {
+		font-size: $text-size-xs;
+		margin: 2px 0 10px;
+		line-height: 1;
+	}
+}
+
+.info__module {
+	border-bottom: 1px solid darken($borderColor, 5%);
+	padding: 0 0 $spacing-xxs;
+	margin: 0 0 $spacing-xs;
+	&:last-child {
+		border-bottom: none;
+		padding: 0;
+	}
+}
+
+.module__host {
+	margin: 0 0 $spacing-xxs;
+	@extend %clearfix;
+}
+
+.useful-links {
+	li {
+		font-size: $text-size-xs;
+		margin: 0 0 5px;
+	}
+}
+
+.episode__nav {
+	font-size: $text-size-xs;
+}
+
+.sharing-links {
+	@extend .useful-links;
+}
