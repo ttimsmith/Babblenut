@@ -9,7 +9,7 @@
 					<span data-icon="i" aria-hidden="true"></span>
 					<span>Subscribe via iTunes</span>
 				</a></li> -->
-				<li><a href="/feed/bytesize/">
+				<li><a href="/feed/babblenut/">
 					<span data-icon="r" aria-hidden="true"></span>
 					<span>Subscribe via RSS</span>	
 				</a></li>
