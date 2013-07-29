@@ -11,6 +11,9 @@ HEADER
 }
 
 .site__nav {
+	ul {
+		margin: 0;
+	}
 	li {
 		display: inline-block;
 		font-size: $text-size-s;

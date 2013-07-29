@@ -4,3 +4,15 @@ BUTTONS
 ---------------------------------------------------------
 
 */
+
+.button {
+  background: lighten($darkColor, 25%);
+  @include border-radius(2px);
+  padding: 8px 15px;
+  color: white;
+  font-weight: bold;
+  @include transition(background .2s ease-in-out);
+  &:hover {
+    background: $linkColor;
+  }
+}
