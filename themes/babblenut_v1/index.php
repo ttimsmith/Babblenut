@@ -15,7 +15,11 @@
 					
 					<article class="entry">
 						<h2><a href="<?php the_permalink(); ?>" title="Link to <?php the_title(); ?>">#<?php the_field('episode_number');?>: <?php the_title(); ?></a></h2>
-						<p class="pubdate"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F jS, Y');?></time> &middot; <?php the_field('episode_length'); ?> minutes</p>
+						<p class="pubdate">
+							<time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F jS, Y');?></time> &middot; 
+							<?php if( get_field('episode_hours')) : ?><?php the_field('episode_hours'); ?> hour<?php endif; ?> <?php the_field('episode_minutes'); ?> minutes
+						</p>
+						
 						<?php the_excerpt(); ?>
 					</article>
 
@@ -24,7 +28,7 @@
 			</div><!-- .posts -->
 
 			<div class="page__navigation">
-				<?php # wp_pagenavi(); ?>
+				<?php wp_pagenavi(); ?>
 			</div>
 
 		</section><!-- .content__main-column -->

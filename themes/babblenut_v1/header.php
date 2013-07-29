@@ -46,8 +46,10 @@
 
   <header class="site__header" role="banner">
     <nav class="site__nav" role="navigation">
-      <li><a href="#">Episodes</a></li>
-      <li><a href="#">Sponsorship</a></li>
-      <li><a href="#">Contact</a></li>
+      <ul>
+        <li><a href="/">Episodes</a></li>
+        <li><a href="#">Sponsorship</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
   </header><!-- .site__header -->
