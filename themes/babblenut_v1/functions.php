@@ -8,9 +8,14 @@ function my_jquery_enqueue() {
    wp_enqueue_script('jquery');
 }
 
+// Media Element Js
+wp_register_script( 'mediaelement-js', get_template_directory_uri() . '/assets/js/mediaelement-and-player.min.js');
+wp_enqueue_script( 'mediaelement-js', 'true', 'true', 'true', 'true');
+
 //Stuff
 wp_register_script( 'global-stuff', get_template_directory_uri() . '/assets/js/stuff-ck.js');
 wp_enqueue_script( 'global-stuff', 'true', 'true', 'true', 'true' );
+
 
 // Episodes Post Type
 
@@ -70,6 +75,37 @@ function my_get_posts( $query ) {
     return $query;
 }
 
+// Adding Sponsors to Feed
+
+function babblenut_postrss($content) {
+  global $wp_query;
+  $sponsorPretext = "<h4>This week’s Babblenut is brought to you by:</h4>";
+  $episodeSponsor = get_field('episode_sponsor');
+  $excerpt = get_field('episode_lead');
+    if(is_feed()) {
+      if($episodeSponsor !== '') {
+        $content = "<p>".$excerpt."</p>".$content.$sponsorPretext.$episodeSponsor;
+      }
+      else {
+        $content = "<p>".$excerpt."</p>".$content;
+      }
+    }
+return $content;
+}
+add_filter('the_content', 'babblenut_postrss');
+
+// Adding Episode Number to Title
+
+function babblenut_titlerss ($content) {
+  global $wp_query;
+  $episodeNumber = get_field('episode_number');
+  if(is_feed()) {
+    $content = "#".$episodeNumber.": ".$content;
+  }
+  return $content;
+}
+add_filter('the_title_rss', 'babblenut_titlerss');
+
 // Removing Unnecessary Stuff from Admin Menu
 
 function remove_menus () {
@@ -112,63 +148,3 @@ add_action('acf/register_fields', 'my_register_fields');
 // Options Page 
 
 include_once( 'add-ons/acf-options-page/acf-options-page.php' );
-
-
-if(function_exists("register_field_group"))
-{
-    register_field_group(array (
-        'id' => 'acf_episode-stuff',
-        'title' => 'Episode Stuff',
-        'fields' => array (
-            array (
-                'key' => 'field_51e9f7a0905b9',
-                'label' => 'Episode Number',
-                'name' => 'episode_number',
-                'type' => 'number',
-                'default_value' => '',
-                'min' => 1,
-                'max' => '',
-                'step' => '',
-            ),
-            array (
-                'key' => 'field_51ea2c8f059b4',
-                'label' => 'Episode Length',
-                'name' => 'episode_length',
-                'type' => 'number',
-                'required' => 1,
-                'default_value' => '',
-                'min' => 1,
-                'max' => 60,
-                'step' => '',
-            ),
-        ),
-        'location' => array (
-            array (
-                array (
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'episodes',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
-            'position' => 'normal',
-            'layout' => 'default',
-            'hide_on_screen' => array (
-                0 => 'custom_fields',
-                1 => 'discussion',
-                2 => 'comments',
-                3 => 'revisions',
-                4 => 'slug',
-                5 => 'author',
-                6 => 'format',
-                7 => 'featured_image',
-                8 => 'tags',
-                9 => 'send-trackbacks',
-            ),
-        ),
-        'menu_order' => 0,
-    ));
-}
