@@ -28,7 +28,7 @@
 
 	      <?php else : ?>
 	    
-	      	<p>This show broadcasts live Tuesdays at 2pm US Central time.</p>
+	      	<p>This show broadcasts live Wednesdays at 5pm US Central time.</p>
 
 		    <?php endif; ?>
 
