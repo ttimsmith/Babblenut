@@ -7,7 +7,7 @@
 		<section class="content__main-column">
 			<div class="description">
 				<h1>Babblenut</h1>
-				<p>A weekly news update focused on the tech, design and development industries. It's the news you need to know.</p>
+				<p>A topical show to empower, entertain, and inspire people to be more, learn more, and try more. It's also better than a punch in the face.</p>
 			</div>
 
 			<div class="posts">
