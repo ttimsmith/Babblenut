@@ -156,8 +156,6 @@ Episode Meta Fields
 
 */
 
-add_action('acf/register_fields', 'my_register_fields');
-
 // Options Page 
 
 include_once( 'add-ons/acf-options-page/acf-options-page.php' );
@@ -186,44 +184,6 @@ if(function_exists("register_field_group"))
         'type' => 'textarea',
         'default_value' => '',
         'formatting' => 'none',
-      ),
-      array (
-        'key' => 'field_51f5b29c79627',
-        'label' => 'Episode Sponsor',
-        'name' => 'episode_sponsor',
-        'type' => 'textarea',
-        'default_value' => '',
-        'formatting' => 'html',
-      ),
-      array (
-        'key' => 'field_51f5b1cef0be4',
-        'label' => 'Episode Number',
-        'name' => 'episode_number',
-        'type' => 'number',
-        'default_value' => '',
-        'min' => '',
-        'max' => '',
-        'step' => '',
-      ),
-      array (
-        'key' => 'field_51f5b1f4f0be5',
-        'label' => 'Episode Hours',
-        'name' => 'episode_hours',
-        'type' => 'number',
-        'default_value' => '',
-        'min' => '',
-        'max' => '',
-        'step' => '',
-      ),
-      array (
-        'key' => 'field_51f5b20bf0be6',
-        'label' => 'Episode Minutes',
-        'name' => 'episode_minutes',
-        'type' => 'number',
-        'default_value' => '',
-        'min' => '',
-        'max' => '',
-        'step' => '',
       ),
     ),
     'location' => array (
@@ -259,14 +219,6 @@ if(function_exists("register_field_group"))
     'id' => 'acf_live-stream',
     'title' => 'Live Stream',
     'fields' => array (
-      array (
-        'key' => 'field_51f6e6c18c0fe',
-        'label' => 'Live Show',
-        'name' => 'live_show',
-        'type' => 'true_false',
-        'message' => 'Is the show live?',
-        'default_value' => 0,
-      ),
       array (
         'key' => 'field_51f6e6f18c0ff',
         'label' => 'Live Episode Number',
