@@ -5,3 +5,46 @@ PAGE NAVIGATION
 -------------------------------------------
 
 */
+
+.page__navigation{
+  margin: $spacing-l 0 0;
+  padding: $spacing-s 0 0;
+	border-top: 1px solid $borderColor;
+}
+
+.wp-pagenavi {
+  @extend %clearfix;
+  overflow: hidden;
+  text-align: center;
+}
+
+.wp-pagenavi a {
+  @include border-radius (4px);
+  display: inline-block;
+  margin: 0 5px;
+  padding: 10px 14px;
+  background: lighten($darkColor, 25%);
+  color: white;
+  font-weight: bold;
+  font-size: .75em;
+  line-height: 130%;
+  &:hover {
+    background: $linkColor;
+    color: white;
+  }
+  &:active {
+    box-shadow: inset 2px 2px 0 rgba(black, .2);
+  }
+}
+
+.current {
+  @include border-radius (4px);
+  display: inline-block;
+  margin: 0 5px;
+  padding: 10px 14px;
+  background: $borderColor;
+  color: $bodyColor;
+  font-weight: bold;
+  font-size: .75em;
+  line-height: 130%;
+}
