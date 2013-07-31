@@ -164,6 +164,7 @@ include_once( 'add-ons/acf-options-page/acf-options-page.php' );
 // Registering Live Stream Options Page
 register_options_page('Live Stream Options');
 
+
 /**
  *  Register Field Groups
  *
@@ -220,21 +221,18 @@ if(function_exists("register_field_group"))
     'title' => 'Live Stream',
     'fields' => array (
       array (
-        'key' => 'field_51f6e6f18c0ff',
+        'key' => 'field_51f988f85aa40',
+        'label' => 'Live Show',
+        'name' => 'live_show',
+        'type' => 'true_false',
+        'message' => '',
+        'default_value' => 0,
+      ),
+      array (
+        'key' => 'field_51f988e45aa3f',
         'label' => 'Live Episode Number',
         'name' => 'live_episode_number',
         'type' => 'number',
-        'conditional_logic' => array (
-          'status' => 1,
-          'rules' => array (
-            array (
-              'field' => 'field_51f6e6c18c0fe',
-              'operator' => '==',
-              'value' => '1',
-            ),
-          ),
-          'allorany' => 'all',
-        ),
         'default_value' => '',
         'min' => '',
         'max' => '',
