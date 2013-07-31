@@ -187,6 +187,14 @@ if(function_exists("register_field_group"))
           'formatting' => 'none',
         ),
         array (
+          'key' => 'field_51f5b29c79627',
+          'label' => 'Episode Sponsor',
+          'name' => 'episode_sponsor',
+          'type' => 'textarea',
+          'default_value' => '',
+          'formatting' => 'html',
+        ),
+        array (
           'key' => 'field_51f5b1cef0be4',
           'label' => 'Episode Number',
           'name' => 'episode_number',
