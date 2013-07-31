@@ -125,6 +125,12 @@ ul {
 	}
 }
 
+.no-posts {
+	p {
+		font-size: 1.3em;
+	}
+}
+
 p.pubdate {
 	color: lighten($darkColor, 45%);
 	font-size: $text-size-xs;
