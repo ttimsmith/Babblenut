@@ -8,9 +8,12 @@ HEADER
 .site__header {
 	background: darken($darkColor, 5%);
 	padding: $spacing-xs $spacing-s;
+  @extend %clearfix;
 }
 
 .site__nav {
+  float: left;
+  margin: 8px 0 0;
 	ul {
 		margin: 0;
 	}
@@ -25,6 +28,10 @@ HEADER
 			}
 		}
 	}
+}
+
+.header__search {
+  float: right;
 }
 
 
