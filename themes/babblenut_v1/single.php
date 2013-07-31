@@ -25,7 +25,10 @@
 					<hr>
 				<?php endif; ?>
 				
-						
+				<?php if (is_preview()) : ?>
+				  <p>You are viewing the preview page for Episode <?php the_field('episode_number'); ?>. This show will be published soon.</p>
+				<?php endif; ?>
+				
 				<?php the_content(); ?>
 
 			</article>
