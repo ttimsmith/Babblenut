@@ -175,47 +175,77 @@ register_options_page('Live Stream Options');
 if(function_exists("register_field_group"))
 {
   register_field_group(array (
-    'id' => 'acf_episode-meta-info',
-    'title' => 'Episode Meta Info',
-    'fields' => array (
-      array (
-        'key' => 'field_51f5fdc23d3f2',
-        'label' => 'Episode Lead',
-        'name' => 'episode_lead',
-        'type' => 'textarea',
-        'default_value' => '',
-        'formatting' => 'none',
-      ),
-    ),
-    'location' => array (
-      array (
+      'id' => 'acf_episode-meta-info',
+      'title' => 'Episode Meta Info',
+      'fields' => array (
         array (
-          'param' => 'post_type',
-          'operator' => '==',
-          'value' => 'episodes',
-          'order_no' => 0,
-          'group_no' => 0,
+          'key' => 'field_51f5fdc23d3f2',
+          'label' => 'Episode Lead',
+          'name' => 'episode_lead',
+          'type' => 'textarea',
+          'default_value' => '',
+          'formatting' => 'none',
+        ),
+        array (
+          'key' => 'field_51f5b1cef0be4',
+          'label' => 'Episode Number',
+          'name' => 'episode_number',
+          'type' => 'number',
+          'default_value' => '',
+          'min' => '',
+          'max' => '',
+          'step' => '',
+        ),
+        array (
+          'key' => 'field_51f5b1f4f0be5',
+          'label' => 'Episode Hours',
+          'name' => 'episode_hours',
+          'type' => 'number',
+          'default_value' => '',
+          'min' => '',
+          'max' => '',
+          'step' => '',
+        ),
+        array (
+          'key' => 'field_51f5b20bf0be6',
+          'label' => 'Episode Minutes',
+          'name' => 'episode_minutes',
+          'type' => 'number',
+          'default_value' => '',
+          'min' => '',
+          'max' => '',
+          'step' => '',
         ),
       ),
-    ),
-    'options' => array (
-      'position' => 'normal',
-      'layout' => 'default',
-      'hide_on_screen' => array (
-        0 => 'custom_fields',
-        1 => 'discussion',
-        2 => 'comments',
-        3 => 'revisions',
-        4 => 'slug',
-        5 => 'author',
-        6 => 'format',
-        7 => 'featured_image',
-        8 => 'tags',
-        9 => 'send-trackbacks',
+      'location' => array (
+        array (
+          array (
+            'param' => 'post_type',
+            'operator' => '==',
+            'value' => 'episodes',
+            'order_no' => 0,
+            'group_no' => 0,
+          ),
+        ),
       ),
-    ),
-    'menu_order' => 0,
-  ));
+      'options' => array (
+        'position' => 'normal',
+        'layout' => 'default',
+        'hide_on_screen' => array (
+          0 => 'custom_fields',
+          1 => 'discussion',
+          2 => 'comments',
+          3 => 'revisions',
+          4 => 'slug',
+          5 => 'author',
+          6 => 'format',
+          7 => 'featured_image',
+          8 => 'tags',
+          9 => 'send-trackbacks',
+        ),
+      ),
+      'menu_order' => 0,
+    ));
   register_field_group(array (
     'id' => 'acf_live-stream',
     'title' => 'Live Stream',
