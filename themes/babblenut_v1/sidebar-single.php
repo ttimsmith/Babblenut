@@ -1,6 +1,6 @@
 <aside class="content__sidebar" role="complementary">
 	<figure class="sidebar__artwork">
-		<a href="/"><img src="http://placehold.it/500" alt="Babblenut Artwork"></a>
+		<a href="/"><img src="<?php bloginfo('template_url'); ?>/assets/img/babblenut-artwork_500.png" alt="Babblenut Artwork"></a>
 	</figure>
 	<div class="sidebar__info">
 		<div class="info__module">
