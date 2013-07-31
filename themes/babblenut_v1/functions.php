@@ -165,3 +165,147 @@ include_once( 'add-ons/acf-options-page/acf-options-page.php' );
 
 // Registering Live Stream Options Page
 register_options_page('Live Stream Options');
+
+/**
+ *  Register Field Groups
+ *
+ *  The register_field_group function accepts 1 array which holds the relevant data to register a field group
+ *  You may edit the array as you see fit. However, this may result in errors if the array is not compatible with ACF
+ */
+
+if(function_exists("register_field_group"))
+{
+  register_field_group(array (
+    'id' => 'acf_episode-meta-info',
+    'title' => 'Episode Meta Info',
+    'fields' => array (
+      array (
+        'key' => 'field_51f5fdc23d3f2',
+        'label' => 'Episode Lead',
+        'name' => 'episode_lead',
+        'type' => 'textarea',
+        'default_value' => '',
+        'formatting' => 'none',
+      ),
+      array (
+        'key' => 'field_51f5b29c79627',
+        'label' => 'Episode Sponsor',
+        'name' => 'episode_sponsor',
+        'type' => 'textarea',
+        'default_value' => '',
+        'formatting' => 'html',
+      ),
+      array (
+        'key' => 'field_51f5b1cef0be4',
+        'label' => 'Episode Number',
+        'name' => 'episode_number',
+        'type' => 'number',
+        'default_value' => '',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+      array (
+        'key' => 'field_51f5b1f4f0be5',
+        'label' => 'Episode Hours',
+        'name' => 'episode_hours',
+        'type' => 'number',
+        'default_value' => '',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+      array (
+        'key' => 'field_51f5b20bf0be6',
+        'label' => 'Episode Minutes',
+        'name' => 'episode_minutes',
+        'type' => 'number',
+        'default_value' => '',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'episodes',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'default',
+      'hide_on_screen' => array (
+        0 => 'custom_fields',
+        1 => 'discussion',
+        2 => 'comments',
+        3 => 'revisions',
+        4 => 'slug',
+        5 => 'author',
+        6 => 'format',
+        7 => 'featured_image',
+        8 => 'tags',
+        9 => 'send-trackbacks',
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+  register_field_group(array (
+    'id' => 'acf_live-stream',
+    'title' => 'Live Stream',
+    'fields' => array (
+      array (
+        'key' => 'field_51f6e6c18c0fe',
+        'label' => 'Live Show',
+        'name' => 'live_show',
+        'type' => 'true_false',
+        'message' => 'Is the show live?',
+        'default_value' => 0,
+      ),
+      array (
+        'key' => 'field_51f6e6f18c0ff',
+        'label' => 'Live Episode Number',
+        'name' => 'live_episode_number',
+        'type' => 'number',
+        'conditional_logic' => array (
+          'status' => 1,
+          'rules' => array (
+            array (
+              'field' => 'field_51f6e6c18c0fe',
+              'operator' => '==',
+              'value' => '1',
+            ),
+          ),
+          'allorany' => 'all',
+        ),
+        'default_value' => '',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'options_page',
+          'operator' => '==',
+          'value' => 'acf-options-live-stream-options',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'default',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+}
