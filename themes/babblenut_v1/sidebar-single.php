@@ -5,10 +5,10 @@
 	<div class="sidebar__info">
 		<div class="info__module">
 			<ul class="useful-links">
-				<!-- <li><a href="#">
+				<li><a href="https://itunes.apple.com/us/podcast/babblenut/id682240614">
 					<span data-icon="i" aria-hidden="true"></span>
 					<span>Subscribe via iTunes</span>
-				</a></li> -->
+				</a></li>
 				<li><a href="/feed/babblenut/">
 					<span data-icon="r" aria-hidden="true"></span>
 					<span>Subscribe via RSS</span>	
