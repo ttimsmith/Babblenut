@@ -16,6 +16,9 @@ wp_enqueue_script( 'mediaelement-js', 'true', 'true', 'true', 'true');
 wp_register_script( 'global-stuff', get_template_directory_uri() . '/assets/js/stuff-ck.js');
 wp_enqueue_script( 'global-stuff', 'true', 'true', 'true', 'true' );
 
+// Podpress theme function
+add_filter('babblenut_player', array(&$podPress, 'insert_content'));
+
 
 
 // Episodes Post Type
@@ -85,10 +88,10 @@ function babblenut_postrss($content) {
   $excerpt = get_field('episode_lead');
     if(is_feed()) {
       if($episodeSponsor !== '') {
-        $content = "<p>".$excerpt."</p>".$content.$sponsorPretext.$episodeSponsor;
+        $content = "<p>".$excerpt."</p><h3>Show Notes</h3>".$content.$sponsorPretext.$episodeSponsor;
       }
       else {
-        $content = "<p>".$excerpt."</p>".$content;
+        $content = "<p>".$excerpt."</p><h3>Show Notes</h3>".$content;
       }
     }
 return $content;
