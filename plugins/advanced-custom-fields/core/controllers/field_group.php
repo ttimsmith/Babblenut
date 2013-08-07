@@ -59,7 +59,8 @@ class acf_field_group
 	function get_field_groups( $array )
 	{
 		// cache
-		$cache = wp_cache_get( 'field_groups', 'acf', false, $found = false );
+		$found = false;
+		$cache = wp_cache_get( 'field_groups', 'acf', false, $found );
 		
 		if( $found )
 		{
@@ -352,14 +353,22 @@ class acf_field_group
 		global $post;
 		
 		
-		// add js vars
-		echo '<script type="text/javascript">
-			acf.nonce = "' . wp_create_nonce( 'acf_nonce' ) . '";
-			acf.post_id = ' . $post->ID . ';
-		</script>';
+		?>
+<script type="text/javascript">
+(function($) {
+
+	// vars
+	acf.post_id = <?php echo $post->ID; ?>;
+	acf.nonce = "<?php echo wp_create_nonce( 'acf_nonce' ); ?>";
+	acf.admin_url = "<?php echo admin_url(); ?>";
+	acf.ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+	
+})(jQuery);	
+</script>
+		<?php
 		
-		
-		do_action('acf/field_group/admin_head'); // new action
+		// new action
+		do_action('acf/field_group/admin_head');
 		
 		
 		// add metaboxes

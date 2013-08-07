@@ -1,8 +1,8 @@
 === Advanced Custom Fields ===
 Contributors: Elliot Condon
 Tags: custom, field, custom field, advanced, simple fields, magic fields, more fields, repeater, matrix, post, type, text, textarea, file, image, edit, admin
-Requires at least: 3.0.0
-Tested up to: 3.5.1
+Requires at least: 3.5.0
+Tested up to: 3.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,7 +50,11 @@ Advanced Custom Fields is the perfect solution for any wordpress website which n
 * Mac Firefox 	:)
 * Mac Safari 	:)
 * Mac Chrome	:)
+* PC Safari 	:)
+* PC Chrome		:)
 * PC Firefox	:)
+* iPhone Safari :)
+* iPad Safari 	:)
 * PC ie7		:S
 
 = Website =
@@ -100,6 +104,22 @@ http://support.advancedcustomfields.com/
 
 
 == Changelog ==
+
+= 4.2.0 =
+* IMPORTANT: ACF now requires a minimum WordPress version of 3.5.0
+* Full integration between attachments and custom fields!
+* Text field: Added new options for prepend, append, placeholder and character limit
+* Textarea field: Added new options for prepend, append, placeholder and character limit
+* Number field: Added new options for prepend, append and placeholder
+* Email field: Added new options for prepend, append and placeholder
+* Password field: Added new options for prepend, append and placeholder
+* Image field: fixed safari bug causing all images to appear small
+* Core: Improved save_lock functionality to prevent inifinite loops when creating a post on the fly
+* Core: Major JS improvements including .live changed to .on
+* Compatibility: Fixed WYSIWYG JS bug with Visual Composer plugin
+* Language: Added Persian Translation - thanks to Ghaem Omidi
+* Language: Updated German translation - thanks to Thomas Meyer
+* Language: Added Swedish translation - thanks to Mikael Jorhult
 
 = 4.1.8.1 =
 * Select field: Revert choices logic - http://support.advancedcustomfields.com/forums/topic/select-field-label-cut-off-at/#post-529
